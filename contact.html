@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - September Fashion & Craft</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">September Fashion & Craft</div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section" style="padding: 40px 10%;">
+    <h2>Contact Us</h2>
+    <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+
+    <div class="contact-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px;">
+      
+      <!-- Contact Form -->
+      <form action="#" method="POST" style="flex: 1; min-width: 300px;">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Google Map (optional) -->
+      <div class="map" style="flex: 1; min-width: 300px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019210097096!2d-122.41941508468154!3d37.774929779759746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d1e480e7b%3A0xf8d2e5d13f1c59b2!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1588353395724!5m2!1sen!2sus"
+          width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="padding: 20px; text-align: center;">
+    <p>&copy; 2025 September Fashion & Craft. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+
+<link rel="stylesheet" href="Home.css">

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - September Fashion & Craft</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">September Fashion & Craft</div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-section" style="padding: 40px 10%; background-color: #fff;">
+    <h2>Your Cart</h2>
+    <div class="cart-items">
+      <!-- Cart Item 1 -->
+      <div class="cart-item" data-id="1">
+        <img src="images/image1.png.png" alt="Product 1">
+        <div>
+          <h3>Crochet Bag</h3>
+          <p class="price">#150,000</p>
+          <label for="quantity1">Quantity:</label>
+          <input type="number" id="quantity1" value="1" min="1" max="10" class="quantity">
+        </div>
+        <div class="remove-item">
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+
+      <!-- Cart Item 2 -->
+      <div class="cart-item" data-id="2">
+        <img src="images/image2.png.png" alt="Product 2">
+        <div>
+          <h3>Ankara Craft/h3>
+          <p class="price">#45,000</p>
+          <label for="quantity2">Quantity:</label>
+          <input type="number" id="quantity2" value="1" min="1" max="10" class="quantity">
+        </div>
+        <div class="remove-item">
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+      
+      <!-- Add more items if needed -->
+    </div>
+
+    <!-- Cart Total -->
+    <div class="cart-total">
+      <p><strong>Total: #<span id="total-price">195</span></strong></p>
+      <a href="checkout.html" class="btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 September Fashion & Craft. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cartItems = document.querySelectorAll('.cart-item');
+    const totalPriceElement = document.getElementById('total-price');
+    
+    // Function to update total price
+    function updateTotal() {
+      let total = 0;
+      
+      // Loop through each cart item
+      cartItems.forEach(item => {
+        const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+        const quantity = item.querySelector('.quantity').value;
+        total += price * quantity;
+      });
+      
+      totalPriceElement.textContent = total.toFixed(2);
+    }
+
+    // Event listener for quantity change
+    document.querySelectorAll('.quantity').forEach(input => {
+      input.addEventListener('input', updateTotal);
+    });
+
+    // Event listener for remove button
+    document.querySelectorAll('.remove-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const item = e.target.closest('.cart-item');
+        item.remove();  // Remove the item from the DOM
+        updateTotal();   // Update the total after removal
+      });
+    });
+
+    // Initial update of the total price
+    updateTotal();
+  </script>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="Home.css">
